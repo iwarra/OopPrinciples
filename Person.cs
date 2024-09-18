@@ -6,8 +6,8 @@ namespace OopPrinciples
         private int age;
         private string fName;
         private string lName;
-        private int height;
-        private int weight;
+        private double height;
+        private double weight;
 
         public int Age { get { return age; } 
             set 
@@ -30,8 +30,8 @@ namespace OopPrinciples
                 else lName = value;
             }
                 }
-        public int Height { get { return height; } set { height = value; } }
-        public int Weight { get { return weight; } set { weight = value; } }
+        public double Height { get { return height; } set { height = value; } }
+        public double Weight { get { return weight; } set { weight = value; } }
 
     }
 }

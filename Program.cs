@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-
+            //3.1 part
             Person p = new() { FName = "Anna", LName = "Johnsson"};
             PersonHandler handler = new PersonHandler();
             try
@@ -17,7 +17,29 @@
                 Console.WriteLine(e);
             }
 
-            Console.WriteLine(p.Age);
+            Person me = handler.CreatePerson(35, "Ivona", "Josipovic", 183, 66);
+            Console.WriteLine(me.FName);
+
+            //3.2 part
+            NumericInputError numericInputError = new NumericInputError();
+            TextInputError textInputError = new TextInputError();   
+            EmptyInputError emptyInputError = new EmptyInputError();
+            UnchangeableInputError unchangeableInputError = new UnchangeableInputError();
+            TestInputError testInputError = new TestInputError();
+
+            List<UserError> UserErrors = new List<UserError> 
+            {
+                numericInputError,
+                textInputError,
+                emptyInputError,
+                unchangeableInputError,
+                testInputError
+            };
+
+            foreach (UserError userError in UserErrors) 
+            {
+                Console.WriteLine(userError.UEMessage());
+            }
         }
     }
 }
