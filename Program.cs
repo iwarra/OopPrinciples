@@ -14,7 +14,7 @@
             }
             catch (ArgumentException e)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(e.Message);
             }
 
             Person me = handler.CreatePerson(35, "Ivona", "Josipovic", 183, 66);
@@ -40,6 +40,10 @@
             {
                 Console.WriteLine(userError.UEMessage());
             }
+
+            //3.3
+            Wolfman w = new Wolfman("w", 4, 60, "humans");
+            w.Talk();
         }
     }
 }

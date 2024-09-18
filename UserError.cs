@@ -1,7 +1,7 @@
 ﻿
 namespace OopPrinciples
 {
-    abstract class UserError
+    internal abstract class UserError
     {
         public abstract string UEMessage();
        
