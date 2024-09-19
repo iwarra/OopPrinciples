@@ -41,9 +41,29 @@
                 Console.WriteLine(userError.UEMessage());
             }
 
-            //3.3
-            Wolfman w = new Wolfman("w", 4, 60, "humans");
+            //3.3 - using a simplified new syntax here
+            Wolfman w = new("w", 4, 60, "humans");
             w.Talk();
+
+            //3.4
+            Dog d = new("Nikki", 6, 10, "shiba inu");
+            Horse h = new("Horsy", 3, 70, true);
+            Wolf wolf = new("Wolfy", 8, 30, "chicken");
+
+            List<Animal> animals = new List<Animal>
+            {
+                d,
+                h,
+                wolf
+            };
+
+            foreach (var animal in animals)
+            {
+                Console.Write($"{animal.Name} says: ");
+                animal.DoSound();
+            }
+
+
         }
     }
 }

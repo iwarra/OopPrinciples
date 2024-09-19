@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection;
+
 namespace OopPrinciples
 {
     //If all animals need a new attribute we add it in the Animal class
@@ -15,6 +17,14 @@ namespace OopPrinciples
             Name = name;
             Age = age;
             Weight = weight;
+        }
+
+    public virtual string Stats()
+        {
+            var properties = this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            // Build a string with property names and values
+            return string.Join(", ", properties.Select(p => $"{p.Name}: {p.GetValue(this)}"));
         }
 
     }
